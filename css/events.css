@@ -80,12 +80,12 @@ a {
     align-self: flex-start;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.8);
-    padding: 12px 1rem;
+    padding: 9px 2rem;
 }
 
 .menu-icon div {
     width: 30px;
-    height: 4px;
+    height: 2px;
     background-color: #D5CEA3;
     margin: 6px 0;
     transition: 0.4s;
@@ -124,10 +124,12 @@ a {
         flex-direction: column;
         width: 30%;
         height: 100vh;
+        backdrop-filter: blur(3px);
     }
     .links a {
-        padding: 10px 1rem;
+        padding: 10px 2rem;
         text-align: left;
+        font-size: 16px;
     }
     .menu-icon {
         display: block;
@@ -135,11 +137,23 @@ a {
     .navbar.open .links {
         display: flex;
         position: absolute;
-        top: 60px;
+        top: 48px;
         z-index: 3;
     }
     .long-arrow {
         display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .links {
+        width: 40%;
+    }
+}
+
+@media (max-width: 500px) {
+     .links {
+        width: 100%;
     }
 }
 
@@ -157,27 +171,27 @@ a {
 }
 
 .event-header {
+    position: relative;
     margin-top: 2%;
     display: flex;
     gap: 1rem;
 }
 
 .box {
-    position: relative;
     width: 2%;
     background-color: #301A11;
 }
 
 .long-arrow {
-    position: fixed;
-    top: 23.5%;
-    left: .5%;
+    position: absolute;
+    top: 0;
+    left: 0;
     z-index: 1;
 }
 
-@media (max-width: 1600px) and (min-width: 1300px){
+@media (max-width: 2000px) and (min-width: 1300px){
     .long-arrow {
-        top: 23%;
+        left: .5%;
     }
     .event-header {
         gap: 1.5rem;
@@ -185,9 +199,6 @@ a {
 }
 
 @media (max-width: 1300px) and (min-width: 900px) {
-    .long-arrow {
-        top: 22%;
-    }
     .event-header {
         gap: 2rem;
     }
@@ -209,6 +220,7 @@ a {
     margin: auto 2%;
     padding: 10px;
     background-color: #301A11;
+    margin-bottom: 5%;
 }
 
 .accordion {
@@ -237,6 +249,7 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
 }
 
 .accordion-header:hover {
@@ -308,6 +321,7 @@ a {
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(4px);
 }
 
 .modal-content {
@@ -364,6 +378,21 @@ a {
     transform: rotate(-135deg);
 }
 
+@media (max-width: 900px) {
+    .event-date p,
+    .event-date h2 {
+        margin: 0 auto 5px;
+    }
+
+    .event-date p {
+        font-size: 12px;
+    }
+
+    .event-date h2 {
+        font-size: 15px;
+    }
+}
+
 .contact-container {
     background-color: #D5CEA3;
     display: flex;
@@ -372,7 +401,6 @@ a {
     justify-content: center;
     gap: 1rem;
     padding: 30px 30px 5px;
-    
 }
 
 .contact {
@@ -461,4 +489,77 @@ a {
 .copyright {
     font-size: 16px;
     font-weight: 600;
+}
+
+@media (max-width: 900px) {
+    .event {
+        font-size: 2rem;
+    }
+    .ad-container,
+    .reg-container,
+    .connect-container {
+        width: 200px;
+        flex: 0;
+    }
+    .registration-office,
+    .admission-office,
+    .stay-connected {
+        width: 190px;
+        margin-right: 14%;
+    }
+    .contact h2 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+    .logo {
+        width: 110px;
+    }
+    .info {
+        gap: 12px;
+    }
+    .info a {
+        font-size: 16px;
+    }
+    .info i {
+        font-size: 18px;
+    }
+    .stay-connected .icons {
+        font-size: 1.5rem;
+    }
+    .copyright {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 500px) {
+    .welcome-content .content,
+    .welcome-content .image {
+        min-width: 300px;
+    }
+}
+
+
+@media (max-width: 947px) and (min-width: 900px) {
+    .stay-connected {
+        width: 220px;
+        margin-left: 10%;
+    }
+    .admission-office {
+        width: 220px;
+        margin-left: 15%;
+    }
+}
+
+@media (max-width: 1246px) and (min-width: 947px) {
+    .logo-container,
+    .ad-container,
+    .reg-container,
+    .connect-container {
+        min-width: 150px;
+        flex: 1;
+    }
+
+    .contact-container {
+        width: 100%;
+    }
 }

@@ -78,12 +78,12 @@ a {
     align-self: flex-start;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.8);
-    padding: 12px 1rem;
+    padding: 9px 2rem;
 }
 
 .menu-icon div {
     width: 30px;
-    height: 4px;
+    height: 2px;
     background-color: #D5CEA3;
     margin: 6px 0;
     transition: 0.4s;
@@ -122,10 +122,12 @@ a {
         flex-direction: column;
         width: 30%;
         height: 100vh;
+        backdrop-filter: blur(3px);
     }
     .links a {
-        padding: 10px 1rem;
+        padding: 10px 2rem;
         text-align: left;
+        font-size: 16px;
     }
     .menu-icon {
         display: block;
@@ -133,11 +135,23 @@ a {
     .navbar.open .links {
         display: flex;
         position: absolute;
-        top: 60px;
+        top: 48px;
         z-index: 3;
     }
     .arrow {
         display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .links {
+        width: 40%;
+    }
+}
+
+@media (max-width: 500px) {
+     .links {
+        width: 100%;
     }
 }
 
@@ -155,6 +169,7 @@ a {
 }
 
 .about-header {
+    position: relative;
     margin-top: 2%;
     display: flex;
     gap: .5rem;
@@ -166,25 +181,19 @@ a {
 }
 
 .arrow {
-    position: fixed;
-    top: 23.5%;
+    position: absolute;
+    top: 0;
     left: .5%;
     z-index: 1;
 }
 
-@media (max-width: 1600px) and (min-width: 1300px){
-    .arrow {
-        top: 23%;
-    }
+@media (max-width: 2000px) and (min-width: 1300px){
     .about-header {
         gap: 1.5rem;
     }
 }
 
 @media (max-width: 1300px) and (min-width: 900px) {
-    .arrow {
-        top: 22%;
-    }
     .about-header {
         gap: 2rem;
     }
@@ -211,12 +220,6 @@ a {
 .mission-vision .content {
     width: 60%;
     margin: auto;
-}
-
-@media (max-width: 900px) {
-    .mission-vision .content {
-        width: 100%;
-    }
 }
 
 .mission-vision h1,
@@ -262,13 +265,6 @@ a {
     margin: auto;
 } 
 
-@media (max-width: 1000px) {
-    .gallery {
-        width: 100%;
-        
-    }
-}
-
 .gallery .photo {
     transition: all .3s ease-in-out;
     width: 150px;
@@ -290,6 +286,15 @@ a {
     margin: 10px 2% auto;
     background-color: #301A11;
     padding: 20px;
+}
+
+@media (max-width: 1024px) {
+    .gallery {
+        width: 100%;
+    }
+    .gallery .photo {
+        width: 125px;
+    }
 }
 
 .contact-container {
@@ -388,4 +393,99 @@ a {
 .copyright {
     font-size: 16px;
     font-weight: 600;
+}
+
+@media (max-width: 900px) {
+    .about-header.about {
+        font-size: 2rem;
+    }
+    .mission-vision h1,
+    .faculty-members h1,
+    .staff-members h1 {
+        font-size: 22px;
+    }
+    .mission-vision .content {
+        width: 100%;
+    }
+    .mission-vision .content p {
+        font-size: 16px;
+    }
+    .gallery .photo p {
+        font-size: 12px;
+    }
+    .gallery .photo h2 {
+        font-size: 16px;
+    }
+    .ad-container,
+    .reg-container,
+    .connect-container {
+        width: 200px;
+        flex: 0;
+    }
+    .registration-office,
+    .admission-office,
+    .stay-connected {
+        width: 190px;
+        margin-right: 14%;
+    }
+    .contact h2 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+    .logo {
+        width: 110px;
+    }
+    .info {
+        gap: 12px;
+    }
+    .info a {
+        font-size: 16px;
+    }
+    .info i {
+        font-size: 18px;
+    }
+    .stay-connected .icons {
+        font-size: 1.5rem;
+    }
+    .copyright {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 500px) {
+    .welcome-content .content,
+    .welcome-content .image {
+        min-width: 300px;
+    }
+}
+
+
+@media (max-width: 948px) and (min-width: 900px) {
+    .stay-connected {
+        width: 220px;
+        margin-left: 10%;
+    }
+    .admission-office {
+        width: 220px;
+        margin-left: 15%;
+    }
+}
+
+@media (max-width: 1246px) and (min-width: 947px) {
+    .logo-container,
+    .ad-container,
+    .reg-container,
+    .connect-container {
+        min-width: 150px;
+        flex: 1;
+    }
+    .contact-container {
+        width: 100%;
+    }
+}
+
+@media (max-width: 948px) and (min-width: 900px) {
+    .reg-container {
+        width: 430px;
+    }
 }

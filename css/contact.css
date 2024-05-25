@@ -78,12 +78,12 @@ a {
     align-self: flex-start;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.8);
-    padding: 12px 1rem;
+    padding: 9px 2rem;
 }
 
 .menu-icon div {
     width: 30px;
-    height: 4px;
+    height: 2px;
     background-color: #D5CEA3;
     margin: 6px 0;
     transition: 0.4s;
@@ -122,10 +122,13 @@ a {
         flex-direction: column;
         width: 30%;
         height: 100vh;
+        backdrop-filter: blur(3px);
+
     }
     .links a {
-        padding: 10px 1rem;
+        padding: 10px 2rem;
         text-align: left;
+        font-size: 16px;
     }
     .menu-icon {
         display: block;
@@ -133,8 +136,20 @@ a {
     .navbar.open .links {
         display: flex;
         position: absolute;
-        top: 60px;
+        top: 48px;
         z-index: 3;
+    }
+}
+
+@media (max-width: 768px) {
+    .links {
+        width: 40%;
+    }
+}
+
+@media (max-width: 500px) {
+     .links {
+        width: 100%;
     }
 }
 
@@ -154,16 +169,13 @@ a {
 .main-container {
     margin: 2% 2% 20px;
     background-color: #301A11;
-    padding: 30px 50px;
+    padding: 30px 3%;
+    color: #D5CEA3;
 }
 
 .main-container h1 {
     margin: 0;
     font-size: 2rem;
-}
-
-.main-container {
-    color: #D5CEA3;
 }
 
 .main-container p {
@@ -177,9 +189,19 @@ a {
 .contact-us {
     display: flex;
     flex-wrap: wrap;
-    gap: 6rem;
+    gap: 1.5rem;
     margin-bottom: 40px;
     width: 100%;
+}
+
+.contact-us .office-hours {
+    margin: 0 auto;
+}
+
+@media (max-width: 595px) {
+    .contact-us .office-hours {
+        margin: 0; 
+    }
 }
 
 .contact-us i {
@@ -228,6 +250,12 @@ a {
 
 .directions .map iframe {
     width: 100%;
+}
+
+@media (max-width: 1100px) {
+    .directions .map {
+        width: 100%;
+    }
 }
 
 .contact-container {
@@ -326,4 +354,86 @@ a {
 .copyright {
     font-size: 16px;
     font-weight: 600;
+}
+
+@media (max-width: 900px) {
+    .main-container h1 {
+        font-size: 26px;
+    }
+    .office h2,
+    .office-hours h2 {
+        font-size: 18px;
+    }
+    .office-hours p,
+    .directions p {
+        font-size: 16px;
+    }
+    .office .icons {
+        font-size: 26px;
+    }
+    .ad-container,
+    .reg-container,
+    .connect-container {
+        width: 200px;
+        flex: 0;
+    }
+    .registration-office,
+    .admission-office,
+    .stay-connected {
+        width: 190px;
+        margin-right: 14%;
+    }
+    .contact h2 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+    .logo {
+        width: 110px;
+    }
+    .info {
+        gap: 12px;
+    }
+    .info a {
+        font-size: 16px;
+    }
+    .info i {
+        font-size: 18px;
+    }
+    .stay-connected .icons {
+        font-size: 1.5rem;
+    }
+    .copyright {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 500px) {
+    .welcome-content .content,
+    .welcome-content .image {
+        min-width: 300px;
+    }
+}
+
+@media (max-width: 946px) and (min-width: 900px) {
+    .stay-connected {
+        width: 220px;
+        margin-left: 10%;
+    }
+    .admission-office {
+        width: 220px;
+        margin-left: 15%;
+    }
+}
+
+@media (max-width: 1246px) and (min-width: 947px) {
+    .logo-container,
+    .ad-container,
+    .reg-container,
+    .connect-container {
+        min-width: 150px;
+        flex: 1;
+    }
+    .contact-container {
+        width: 100%;
+    }
 }

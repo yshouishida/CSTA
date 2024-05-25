@@ -80,12 +80,12 @@ a {
     align-self: flex-start;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.8);
-    padding: 12px 1rem;
+    padding: 9px 2rem;
 }
 
 .menu-icon div {
     width: 30px;
-    height: 4px;
+    height: 2px;
     background-color: #D5CEA3;
     margin: 6px 0;
     transition: 0.4s;
@@ -124,10 +124,13 @@ a {
         flex-direction: column;
         width: 30%;
         height: 100vh;
+        backdrop-filter: blur(3px);
+
     }
     .links a {
-        padding: 10px 1rem;
+        padding: 10px 2rem;
         text-align: left;
+        font-size: 16px;
     }
     .menu-icon {
         display: block;
@@ -135,8 +138,20 @@ a {
     .navbar.open .links {
         display: flex;
         position: absolute;
-        top: 60px;
+        top: 48px;
         z-index: 3;
+    }
+}
+
+@media (max-width: 768px) {
+    .links {
+        width: 40%;
+    }
+}
+
+@media (max-width: 500px) {
+     .links {
+        width: 100%;
     }
 }
 
@@ -169,7 +184,7 @@ a {
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
-    height: 85vh;
+    height: 78vh;
     background-color: #3C2A21;
     background-image: url(../image/home/heart\ of\ eababs.png);
     background-position: 40% center;
@@ -250,7 +265,6 @@ a {
 .welcome-content {
     display: flex;
     flex-wrap: wrap;
-
 }
 
 .welcome-content .content {
@@ -262,11 +276,15 @@ a {
     font-weight: 500;
     text-align: left;
     padding: 20px;
+    word-wrap: break-word;
 }
 
 @media (max-width: 900px) {
     .welcome {
         font-size: 2rem;
+    }
+    .welcome-content .content {
+        font-size: 1rem;
     }
     .data h1 {
         font-size: 2rem;
@@ -274,8 +292,22 @@ a {
     .data p {
         font-size: 1rem;
     }
-    .welcome-content .content {
-        font-size: 1rem;
+}
+
+@media (max-width: 500px) {
+    .grad-stud,
+    .hire-rate,
+    .ratio {
+        width: 100%;    }
+    .data h1 {
+        font-size: 3rem;
+        text-align: center;
+
+    }
+    .data p {
+        font-size: 1.2rem;
+        text-align: center;
+
     }
 }
 
@@ -388,4 +420,86 @@ a {
 .copyright {
     font-size: 16px;
     font-weight: 600;
+}
+
+@media (max-width: 900px) {
+   
+    .tagline {
+        font-size: 4.5rem;
+    }
+
+    .discover {
+        padding: 8px 14px;  
+    }
+
+    .discover a {
+        font-size: 16px;
+    }
+
+    .ad-container,
+    .reg-container,
+    .connect-container {
+        width: 200px;
+        flex: 0;
+    }
+    .registration-office,
+    .admission-office,
+    .stay-connected {
+        width: 190px;
+        margin-right: 14%;
+    }
+    .contact h2 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+    .logo {
+        width: 110px;
+    }
+    .info {
+        gap: 12px;
+    }
+    .info a {
+        font-size: 16px;
+    }
+    .info i {
+        font-size: 18px;
+    }
+    .stay-connected .icons {
+        font-size: 1.5rem;
+    }
+    .copyright {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 500px) {
+    .welcome-content .content,
+    .welcome-content .image {
+        min-width: 300px;
+    }
+}
+
+
+@media (max-width: 946px) and (min-width: 900px) {
+    .stay-connected {
+        width: 220px;
+        margin-left: 10%;
+    }
+    .admission-office {
+        width: 220px;
+        margin-left: 15%;
+    }
+}
+
+@media (max-width: 1246px) and (min-width: 947px) {
+    .logo-container,
+    .ad-container,
+    .reg-container,
+    .connect-container {
+        min-width: 150px;
+        flex: 1;
+    }
+    .contact-container {
+        width: 100%;
+    }
 }
