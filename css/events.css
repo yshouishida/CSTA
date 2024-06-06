@@ -279,10 +279,8 @@ a {
 
 .gallery {
     margin: 20px auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 10px;
 }
 
@@ -305,7 +303,7 @@ a {
     object-position: center center;
 }
 
-.photo:hover {
+img:hover {
     opacity: 0.8;
     scale: 1.05;
 }
