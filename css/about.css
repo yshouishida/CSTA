@@ -257,23 +257,11 @@ a {
 }
 
 .gallery {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     width: 90%;
     margin: auto;
 } 
-
-.gallery .photo {
-    transition: all .3s ease-in-out;
-    width: 150px;
-    /* flex: 1; */
-}
-
-.gallery .photo:hover {
-    scale: 1.05;
-}
 
 .gallery .photo img {
     width: 100%;
@@ -281,20 +269,10 @@ a {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-
 .staff-members {
     margin: 10px 2% auto;
     background-color: #301A11;
     padding: 20px;
-}
-
-@media (max-width: 1024px) {
-    .gallery {
-        width: 100%;
-    }
-    .gallery .photo {
-        width: 125px;
-    }
 }
 
 .contact-container {
