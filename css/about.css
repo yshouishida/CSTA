@@ -1,469 +1,461 @@
-::-webkit-scrollbar {
-    width: 12px; /* Width of the scrollbar */
-    height: 12px; /* Height of the scrollbar (horizontal) */
-}
-
-::-webkit-scrollbar-track {
-    background: #301A11;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #D5CEA3;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #1A120B;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #D5CEA3;
-}
-
-a {
-    text-decoration: none;
-    color: #D5CEA3;
-}
-
-.header {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: linear-gradient(rgba(213, 206, 163, 0.8), rgba(213, 206, 163, 0.8)), url(../image/banner2.png);
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    width: 100%;
-    z-index: 2;
-    padding: 5px;
-}
-
-.upper-logo {   
-    width: 90px;
-    cursor: pointer;
-}
-
-.upper-logo img {
-    width: 100%;
-}
-
-.school-name {
-    letter-spacing: 5px;
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: black;
-    text-align: center;
-}
-
-.navbar {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    position: sticky;
-    top: 0;
-    z-index: 3;
-}
-
-.menu-icon {
-    display: none;
-    cursor: pointer;
-    align-self: flex-start;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 9px 2rem;
-}
-
-.menu-icon div {
-    width: 30px;
-    height: 2px;
-    background-color: #D5CEA3;
-    margin: 6px 0;
-    transition: 0.4s;
-}
-
-.links {
-    display: flex;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-.links a {
-    color: #D5CEA3;
-    text-align: center;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 18px;
-    padding: 12px 2rem;
-    text-decoration: none;
-
-}
-
-.links a.active {
-    background-color: #D5CEA3;
-    color: #301A11;
-}
-
-.links a:hover {
-    color: goldenrod;
-}
-
-/* Responsive layout: hide links and show menu icon on small screens */
-@media (max-width: 900px) {
-    .links {
-        display: none;
-        flex-direction: column;
-        width: 30%;
-        height: 100vh;
-        backdrop-filter: blur(3px);
-    }
-    .links a {
-        padding: 10px 2rem;
-        text-align: left;
-        font-size: 16px;
-    }
-    .menu-icon {
-        display: block;
-    }
-    .navbar.open .links {
-        display: flex;
-        position: absolute;
-        top: 48px;
-        z-index: 3;
-    }
-    .arrow {
-        display: none;
-    }
-}
-
-@media (max-width: 768px) {
-    .links {
-        width: 40%;
-    }
-}
-
-@media (max-width: 500px) {
-     .links {
-        width: 100%;
-    }
-}
-
-/* Animation for the menu icon */
-.menu-icon.open .bar1 {
-    transform: rotate(-45deg) translate(-8px, 8px);
-}
-
-.menu-icon.open .bar2 {
-    opacity: 0;
-}
-
-.menu-icon.open .bar3 {
-    transform: rotate(45deg) translate(-8px, -8px);
-}
-
-.about-header {
-    position: relative;
-    margin-top: 2%;
-    display: flex;
-    gap: .5rem;
-}
-
-.about-header .box {
-    width: 2%;
-    background-color: #301A11;
-}
-
-.arrow {
-    position: absolute;
-    top: 0;
-    left: .5%;
-    z-index: 1;
-}
-
-@media (max-width: 2000px) and (min-width: 1300px){
-    .about-header {
-        gap: 1.5rem;
-    }
-}
-
-@media (max-width: 1300px) and (min-width: 900px) {
-    .about-header {
-        gap: 2rem;
-    }
-}
-
-.arrow i {
-    font-size: 3rem;
-    margin: 0;
-}
-
-.about-header .about {
-    margin-left: 10px;
-    font-size: 2.5rem;
-    font-weight: 500;
-    color: #301A11;
-}
-
-.mission-vision {
-    margin: auto 2% 10px;
-    background-color: #301A11;
-    padding: 20px;
-}
-
-.mission-vision .content {
-    width: 60%;
-    margin: auto;
-}
-
-.mission-vision h1,
-.mission-vision p,
-.faculty-members h1,
-.staff-members h1 {
-    margin-top: 0;
-    color: #D5CEA3;
-    text-align: center;
-}
-
-.mission-vision p {
-    font-size: 18px;
-}
-
-.faculty-members p,
-.staff-members p {
-    margin-bottom: 0;
-    margin-top: 0;
-    color: #D5CEA3;
-    font-size: 16px;
-}
-
-.faculty-members h2,
-.staff-members h2 {
-    margin-top: 0;
-    color: #D5CEA3;
-    font-size: 1.2rem;
-}
-
-.faculty-members {
-    margin: auto 2%;
-    background-color: #301A11;
-    padding: 20px;
-}
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    width: 90%;
-    margin: auto;
-} 
-
-.gallery .photo img {
-    width: 100%;
-    border-radius: 6px 6px 0px 0px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.staff-members {
-    margin: 10px 2% auto;
-    background-color: #301A11;
-    padding: 20px;
-}
-
-.contact-container {
-    background-color: #D5CEA3;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    padding: 30px 30px 5px;
-}
-
-.contact {
-    width: 100%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.ad-container,
-.reg-container,
-.connect-container {
-    min-width: 285px;
-    flex: 1;
-}
-
-.registration-office,
-.admission-office,
-.stay-connected {
-    width: 220px;
-    margin: auto;
-}
-
-.contact h2 {   
-    color: #301A11;
-    font-size: 1.5rem;
-    margin-top: 0;
-}
-
-.contact a {
-    color: #301A11;
-    font-size: 1.2rem;
-    transition: all .3s ease ease-in-out;
-}
-
-.contact i {
-    color: #301A11;
-    cursor: pointer;
-    transition: all .3s ease ease-in-out;
-}
-
-.contact i:hover {
-    color: black;
-    scale: 1.05;
-}
-
-
-.logo-container {
-    align-self: flex-end;
-    min-width: 285px;
-}
-
-.logo {
-    width: 130px;
-    cursor: pointer;
-    margin: auto;
-}
-
-.logo img {
-    width: 100%;
-}
-
-.info {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-}
-
-.info a {
-    font-size: 20px;
-}
-
-.info a:hover {
-    text-decoration: underline;
-}
-
-.stay-connected .icons {
-    display: flex;
-    justify-content: flex-start;
-    gap: 1rem;
-    font-size: 2rem;
-}
-
-.copyright {
-    font-size: 16px;
-    font-weight: 600;
-}
-
-@media (max-width: 900px) {
-    .about-header.about {
-        font-size: 2rem;
-    }
-    .mission-vision h1,
-    .faculty-members h1,
-    .staff-members h1 {
-        font-size: 22px;
-    }
-    .mission-vision .content {
-        width: 100%;
-    }
-    .mission-vision .content p {
-        font-size: 16px;
-    }
-    .gallery .photo p {
-        font-size: 12px;
-    }
-    .gallery .photo h2 {
-        font-size: 16px;
-    }
-    .ad-container,
-    .reg-container,
-    .connect-container {
-        width: 200px;
-        flex: 0;
-    }
-    .registration-office,
-    .admission-office,
-    .stay-connected {
-        width: 190px;
-        margin-right: 14%;
-    }
-    .contact h2 {
-        font-size: 1.3rem;
-        margin-bottom: 10px;
-    }
-    .logo {
-        width: 110px;
-    }
-    .info {
-        gap: 12px;
-    }
-    .info a {
-        font-size: 16px;
-    }
-    .info i {
-        font-size: 18px;
-    }
-    .stay-connected .icons {
-        font-size: 1.5rem;
-    }
-    .copyright {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 500px) {
-    .welcome-content .content,
-    .welcome-content .image {
-        min-width: 300px;
-    }
-}
-
-
-@media (max-width: 948px) and (min-width: 900px) {
-    .stay-connected {
-        width: 220px;
-        margin-left: 10%;
-    }
-    .admission-office {
-        width: 220px;
-        margin-left: 15%;
-    }
-}
-
-@media (max-width: 1246px) and (min-width: 947px) {
-    .logo-container,
-    .ad-container,
-    .reg-container,
-    .connect-container {
-        min-width: 150px;
-        flex: 1;
-    }
-    .contact-container {
-        width: 100%;
-    }
-}
-
-@media (max-width: 948px) and (min-width: 900px) {
-    .reg-container {
-        width: 430px;
-    }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHOOSE THE RIGHT BLOCK FLOWCHART</title>    
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        #container {
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            max-width: 100%;
+            position: relative;
+        }
+
+        .option-settings {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            cursor: pointer;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input[type="number"] {
+            width: 50px;
+            padding: 5px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        button#generate:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        /* Option modal section */
+
+        #select-button-label {
+            position: absolute;
+            width: 95%;
+            height: 550px;
+            top: 50%;
+            left: 50%;  
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .select-label-container {
+            width: 30%;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        #modal {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(4px);
+            display: none;
+        }
+
+        .close {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        /* Output section */
+
+        #output {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        #output img {
+            transition: transform 0.3s;
+        }
+
+        #output img:hover {
+            transform: scale(1.1);
+        }
+
+        #output div {
+            text-align: center;
+            margin: 10px;
+        }
+
+        #output img {
+            max-width: 60px;
+            cursor: pointer;
+        }
+
+        .image-description {
+            font-size: 30px;
+            margin-top: 5px;
+            color: #666;
+        }
+
+        #result.correct {   
+            color: green;
+            font-size: 20px;
+        }
+
+        #result.wrong {
+            color: red;
+            font-size: 20px;
+        }
+
+        .shake {
+            animation: shake 0.3s ease-in-out;
+            border: 2px solid red !important; /* Override the border style for a red border */
+        }
+
+        @keyframes shake {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(-5px);
+            }
+            50% {
+                transform: translateX(5px);
+            }
+            75% {
+                transform: translateX(-5px);
+            }
+        }
+
+        @media (max-width: 2560px){
+            #select-button-label {
+                width: 35%;
+                height: 500px;
+            }
+            #container {
+                width: 50%;
+            }
+            
+        }
+        @media (max-width: 768px){
+            #select-button-label {
+                width: 95%;
+                height: 500px;
+            }
+            
+            #container {
+                width: 95%;
+            }
+        }
+
+    </style>        
+</head>
+<body>
+   
+    <h1>CHOOSE THE RIGHT BLOCK</h1>
+    <div id="container">
+        <svg class="option-settings" width="30px" height="30px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0">
+        </g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#000000" d="M600.704 64a32 32 0 0 1 30.464 22.208l35.2 109.376c14.784 7.232 28.928 15.36 42.432 24.512l112.384-24.192a32 32 0 0 1 34.432 15.36L944.32 364.8a32 32 0 0 1-4.032 37.504l-77.12 85.12a357.12 357.12 0 0 1 0 49.024l77.12 85.248a32 32 0 0 1 4.032 37.504l-88.704 153.6a32 32 0 0 1-34.432 15.296L708.8 803.904c-13.44 9.088-27.648 17.28-42.368 24.512l-35.264 109.376A32 32 0 0 1 600.704 960H423.296a32 32 0 0 1-30.464-22.208L357.696 828.48a351.616 351.616 0 0 1-42.56-24.64l-112.32 24.256a32 32 0 0 1-34.432-15.36L79.68 659.2a32 32 0 0 1 4.032-37.504l77.12-85.248a357.12 357.12 0 0 1 0-48.896l-77.12-85.248A32 32 0 0 1 79.68 364.8l88.704-153.6a32 32 0 0 1 34.432-15.296l112.32 24.256c13.568-9.152 27.776-17.408 42.56-24.64l35.2-109.312A32 32 0 0 1 423.232 64H600.64zm-23.424 64H446.72l-36.352 113.088-24.512 11.968a294.113 294.113 0 0 0-34.816 20.096l-22.656 15.36-116.224-25.088-65.28 113.152 79.68 88.192-1.92 27.136a293.12 293.12 0 0 0 0 40.192l1.92 27.136-79.808 88.192 65.344 113.152 116.224-25.024 22.656 15.296a294.113 294.113 0 0 0 34.816 20.096l24.512 11.968L446.72 896h130.688l36.48-113.152 24.448-11.904a288.282 288.282 0 0 0 34.752-20.096l22.592-15.296 116.288 25.024 65.28-113.152-79.744-88.192 1.92-27.136a293.12 293.12 0 0 0 0-40.256l-1.92-27.136 79.808-88.128-65.344-113.152-116.288 24.96-22.592-15.232a287.616 287.616 0 0 0-34.752-20.096l-24.448-11.904L577.344 128zM512 320a192 192 0 1 1 0 384 192 192 0 0 1 0-384zm0 64a128 128 0 1 0 0 256 128 128 0 0 0 0-256z"></path></g></svg>
+        <br><br>
+        <button id="generate">Generate</button>
+        <p id="description"></p>
+        <div id="output"></div>
+        <p id="result"></p>
+        <p id="score">Score: <span id="scoreValue"></span></p>
+        
+    </div>
+
+    <div id="modal">
+        <div id="select-button-label">
+            <span class="close">&times;</span>
+
+            <div class="select-label-container">
+                <label for="numImages">Number of Pictures:</label>
+                <select id="numImages" style="background-color: #fff;">
+                    <option value="3">3</option>
+                    <option value="5" selected>5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                </select>
+            </div>
+            
+            
+            <div class="select-label-container">
+                <label for="imageWidth">Image Width (px):</label>
+                <select id="imageWidth" style="background-color: #fff;">
+                    <option value="90">90px</option>
+                    <option value="100">100px</option>
+                    <option value="120">120px</option>
+                </select>
+            </div>
+    
+            <div class="select-label-container">
+                <label for="themeSelect">Select Theme:</label>
+                <select id="themeSelect">
+                    <option value="theme1">Blue Shapes</option>
+                    <option value="theme2">Light Blue Shapes</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const themes = {    
+            theme1: [
+            { path: 'Blue_Theme/annotation.png', description: 'Annotation/Comment' },
+            { path: 'Blue_Theme/collate.png', description: 'collate' },
+            { path: 'Blue_Theme/connector.png', description: 'connector' },
+            { path: 'Blue_Theme/data.png', description: 'data' },
+            { path: 'Blue_Theme/database.png', description: 'database' },
+            { path: 'Blue_Theme/decision.png', description: 'decision' },
+            { path: 'Blue_Theme/delay.png', description: 'delay' },
+            { path: 'Blue_Theme/direct data.png', description: 'direct data' },
+            { path: 'Blue_Theme/display.png', description: 'display' },
+            { path: 'Blue_Theme/document.png', description: 'document' },
+            { path: 'Blue_Theme/internal storage.png', description: 'internal storage' },
+            { path: 'Blue_Theme/logical or.png', description: 'logical OR' },
+            { path: 'Blue_Theme/logical and.png', description: 'logical AND' },
+            { path: 'Blue_Theme/loop limit.png', description: 'loop limit' },
+            { path: 'Blue_Theme/manual input.png', description: 'manual input' },
+            { path: 'Blue_Theme/manual loop.png', description: 'manual loop' },
+            { path: 'Blue_Theme/merge.png', description: 'merge' },
+            { path: 'Blue_Theme/multiple document.png', description: 'multiple document' },
+            { path: 'Blue_Theme/off-page connector.png', description: 'off-page connector' },
+            { path: 'Blue_Theme/paper tape.png', description: 'paper tape' },
+            { path: 'Blue_Theme/preparation.png', description: 'preparation' },
+            { path: 'Blue_Theme/process.png', description: 'process' },
+            { path: 'Blue_Theme/sort.png', description: 'sort' },
+            { path: 'Blue_Theme/stored data.png', description: 'stored data' },
+            { path: 'Blue_Theme/subroutine.png', description: 'subroutine' },
+            { path: 'Blue_Theme/tape data.png', description: 'tape data' },
+            { path: 'Blue_Theme/teminator.png', description: 'teminator' }
+            ],
+            theme2: [
+            { path: 'LightBlue_Theme/annotation.png', description: 'Annotation/Comment' },
+            { path: 'LightBlue_Theme/collate.png', description: 'collate' },
+            { path: 'LightBlue_Theme/connector.png', description: 'connector' },
+            { path: 'LightBlue_Theme/data.png', description: 'data' },
+            { path: 'LightBlue_Theme/database.png', description: 'database' },
+            { path: 'LightBlue_Theme/decision.png', description: 'decision' },
+            { path: 'LightBlue_Theme/delay.png', description: 'delay' },
+            { path: 'LightBlue_Theme/direct data.png', description: 'direct data' },
+            { path: 'LightBlue_Theme/display.png', description: 'display' },
+            { path: 'LightBlue_Theme/document.png', description: 'document' },
+            { path: 'LightBlue_Theme/internal storage.png', description: 'internal storage' },
+            { path: 'LightBlue_Theme/logical or.png', description: 'logical OR' },
+            { path: 'LightBlue_Theme/logical and.png', description: 'logical AND' },
+            { path: 'LightBlue_Theme/loop limit.png', description: 'loop limit' },
+            { path: 'LightBlue_Theme/manual input.png', description: 'manual input' },
+            { path: 'LightBlue_Theme/manual loop.png', description: 'manual loop' },
+            { path: 'LightBlue_Theme/merge.png', description: 'merge' },
+            { path: 'LightBlue_Theme/multiple document.png', description: 'multiple document' },
+            { path: 'LightBlue_Theme/off-page connector.png', description: 'off-page connector' },
+            { path: 'LightBlue_Theme/paper tape.png', description: 'paper tape' },
+            { path: 'LightBlue_Theme/preparation.png', description: 'preparation' },
+            { path: 'LightBlue_Theme/process.png', description: 'process' },
+            { path: 'LightBlue_Theme/sort.png', description: 'sort' },
+            { path: 'LightBlue_Theme/stored data.png', description: 'stored data' },
+            { path: 'LightBlue_Theme/subroutine.png', description: 'subroutine' },
+            { path: 'LightBlue_Theme/tape data.png', description: 'tape data' },
+            { path: 'LightBlue_Theme/teminator.png', description: 'teminator' }
+            ]
+        };
+
+        const numImagesSelect = document.getElementById("numImages");
+
+        // Listen for change event to update displayed value
+        numImagesSelect.addEventListener("change", function () {
+            const numImages = parseInt(numImagesSelect.value);
+
+        });
+
+
+        const imageWidthSelect = document.getElementById("imageWidth");
+
+        // Listen for change event to update displayed value
+        imageWidthSelect.addEventListener("change", function () {
+            const width = imageWidthSelect.value;
+            updateImageWidth(width);
+        });
+
+
+        let score = 0;
+    
+        function updateScore(correct) {
+        if (correct) {
+            score++;
+        } else {
+            score;
+        }
+        document.getElementById("scoreValue").textContent = score;
+        }
+        const imageWidthInput = document.getElementById("imageWidth");
+        const imageWidthValue = document.getElementById("imageWidthValue");
+        // Listen for input change to update displayed value
+        imageWidthInput.addEventListener("input", function () {
+            const width = imageWidthInput.value;
+            imageWidthValue.textContent = width + 'px';
+            updateImageWidth(width);
+        });     
+     
+        // Function to update image width
+        function updateImageWidth(width) {
+            const images = document.querySelectorAll('#output img');
+            images.forEach(image => {
+                image.style.maxWidth = width + 'px';
+            });
+        }
+    
+        function shuffle(array) {
+            let currentIndex = array.length, temporaryValue, randomIndex;
+            let lastIndex = -1; 
+
+            while (currentIndex !== 0) {
+                // Generate a random index that is different from the last index
+                do {
+                    randomIndex = Math.floor(Math.random() * currentIndex);
+                } while (randomIndex === lastIndex);
+
+                currentIndex -= 1;
+
+                temporaryValue = array[currentIndex];
+                array[currentIndex] = array[randomIndex];
+                array[randomIndex] = temporaryValue;
+
+
+                lastIndex = currentIndex;
+            }
+
+            return array;
+        }
+        const generateButton = document.getElementById("generate");
+        const outputDiv = document.getElementById("output");
+        const descriptionParagraph = document.getElementById("description");
+        const resultParagraph = document.getElementById("result");
+        const themeSelect = document.getElementById("themeSelect");
+    
+        generateButton.addEventListener("click", function () {
+
+        const numImages = parseInt(document.getElementById("numImages").value);
+        const selectedTheme = themeSelect.value;
+        const themeCharacters = themes[selectedTheme];
+        const shuffledImages = shuffle(themeCharacters.slice());
+        const correctImageIndex = Math.floor(Math.random() * numImages);
+        const { description } = shuffledImages[correctImageIndex];
+        const imageWidth = parseInt(document.getElementById("imageWidth").value);
+        outputDiv.innerHTML = "";
+
+        descriptionParagraph.textContent = description;
+        let outputHTML = "";
+        for (let i = 0; i < numImages; i++) {
+            const { path } = shuffledImages[i];
+            outputHTML += `
+                <div>
+                    <img src="${path}" alt="Random Image" data-description="${description}" data-index="${i}" style="max-width: ${imageWidth}px;">
+                </div>
+            `;
+
+        }
+        outputDiv.innerHTML = outputHTML;
+        const images = document.querySelectorAll('#output img');
+        images.forEach(image => {
+            image.addEventListener('click', () => {
+                const clickedDescription = image.getAttribute('data-description');
+                const clickedIndex = parseInt(image.getAttribute('data-index'));
+                const isCorrect = clickedIndex === correctImageIndex;
+                updateScore(isCorrect); 
+
+                if (!isCorrect) {
+                        image.classList.add('shake'); //shake class for incorrect answer
+                        setTimeout(() => {
+                            image.classList.remove('shake'); 
+                        }, 500);
+                }
+
+                if (isCorrect) {
+                    resultParagraph.classList.add('correct');
+                    resultParagraph.classList.remove('wrong');
+                    resultParagraph.innerText = 'Correct!';
+                    setTimeout(() => {
+                        generateButton.click(); 
+                    }, 100);
+                }
+
+                 else {
+                    resultParagraph.classList.add('wrong');
+                    resultParagraph.classList.remove('correct');
+                    resultParagraph.innerText = 'Wrong!';
+                }
+
+            });
+        });
+    });
+
+    const modal = document.getElementById('modal');
+
+    document.querySelector('.close').addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    document.querySelector('.option-settings').addEventListener('click', () => {
+        modal.style.display = 'block';
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) modal.style.display = 'none';
+    });
+
+    </script>
+</body>
+</html>
